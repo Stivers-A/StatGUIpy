@@ -10,8 +10,8 @@ mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
 root.columnconfigure(0, weight=1)
 root.rowconfigure(0, weight=1)
 
-ttk.Button(mainframe, text="Select File", command=file_opener).grid(column=10, row=10, sticky=N)
-ttk.Button(mainframe, text="Box").grid(column=9, row=8, sticky=N)
+ttk.Button(mainframe, text="Select File", command=file_opener).grid(column=1, row=1, sticky=N)
+ttk.Button(mainframe, text="Box").grid(column=9, row=1, sticky=N)
 ttk.Button(mainframe, text="Box2").grid(column=8, row=9, sticky=N)
 
 for child in mainframe.winfo_children(): 
