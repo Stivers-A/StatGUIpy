@@ -12,7 +12,8 @@ def file_opener():
         filetypes = (("Read Me", "*.md"), ("All files", "*")))
         
     print(file_name ,"print from fileDialog")
-    return file_name
+    file_name_output = str(file_name)
+    return file_name_output
     #This dictates the files that show up
 # window.wm_attributes('-topmost', 1) and "parent=window" argument help open the dialog box on top of other windows
 file_opener()
