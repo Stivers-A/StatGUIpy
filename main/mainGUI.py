@@ -2,9 +2,13 @@ from tkinter import *
 from tkinter import ttk
 import sv_ttk
 from fileDialog import file_opener
+
+file_name = " "
 def fileSelect():
+    global file_name 
     file_name = file_opener()
     print(file_name, "print from mainGUI")
+    
 
 
 root = Tk()
