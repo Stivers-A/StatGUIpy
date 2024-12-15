@@ -1,3 +1,3 @@
-1- get file_name from fileDialog to save to mainGUI as a variable for later use
-2- create an option to select a row or column of the selected file
+1- get file_name from fileDialog to save to mainGUI as a variable for later use DONE
+2- create an option to select a row or column of the selected file 
 3 - display basic statistical information about that row or column
