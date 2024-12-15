@@ -9,8 +9,6 @@ def fileSelect():
     file_name = file_opener()
     print(file_name, "print from mainGUI")
     
-
-
 root = Tk()
 root.title("Stats GUI  Py")
 mainframe = ttk.Frame(root, padding="3 3 12 12")
