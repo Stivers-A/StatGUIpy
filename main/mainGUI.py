@@ -34,8 +34,34 @@ bar_entry.grid(column=3, row=2, sticky=(W, E))
 #first creates a string for feet, then creates an entry text box that assigns its input to feet
 ttk.Button(mainframe, text="Box2").grid(column=8, row=9, sticky=N)
 
+#row or column toggle
+is_row = True
+ 
+# Define our switch function
+def switch():
+    global is_row
+     
+    # Determine is on or off
+    if is_row:
+        bar_button.config(text = "Set to Column")
+        is_row = False
+        bar_name.config(text = "Column Title")
 
-ttk.Label(mainframe, text="Barname Name").grid(column=2, row=2, sticky=(W, E))
+    else:
+       bar_button.config(text = "Set to Row") 
+       is_row = True
+       bar_name.config(text = "Row Title")
+
+ 
+# Create A Button
+bar_button = ttk.Button(mainframe, text="Set to Row",command = switch)
+bar_button.grid(column=3, row=3, sticky=(W, E))
+
+
+
+
+bar_name = ttk.Label(mainframe, text="Bar Name")
+bar_name.grid(column=2, row=2, sticky=(W, E))
 
 for child in mainframe.winfo_children(): 
     child.grid_configure(padx=5, pady=5)
