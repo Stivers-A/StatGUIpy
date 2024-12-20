@@ -14,8 +14,19 @@ def fileSelect():
 def confirmSelect():
     global file_name
     print(file_name, "print from confirmSelect")
-        
-
+    assesedValues = []
+#a matrix that can be filled
+    with open (file_name,'r',newline='') as csvfile:
+        reader = csv.DictReader(csvfile)
+        for row in reader:
+            assesedValues.append(float(row['Assessed Value']))
+        print(assesedValues)
+#selecting row/column by name
+bar = StringVar()
+def bar_entry_save():
+    global bar
+    bar = bar_entry.get()
+    print("bar entry saved ", bar)
 
 root = Tk()
 root.title("Stats GUI  Py")
@@ -26,13 +37,15 @@ root.columnconfigure(0, weight=1)
 root.rowconfigure(0, weight=1)
 
 ttk.Button(mainframe, text="Select File", command=fileSelect).grid(column=1, row=1, sticky=N)
-ttk.Button(mainframe, text="Confirm Selection",command=confirmSelect).grid(column=9, row=1, sticky=N)
+ttk.Button(mainframe, text="Finalize Selection",command=confirmSelect).grid(column=9, row=1, sticky=N)
 
-bar = StringVar()
+
 bar_entry = ttk.Entry(mainframe, width=25, textvariable=bar)
 bar_entry.grid(column=3, row=2, sticky=(W, E))
-#first creates a string for feet, then creates an entry text box that assigns its input to feet
-ttk.Button(mainframe, text="Box2").grid(column=8, row=9, sticky=N)
+
+bar_entry_confirm = ttk.Button(mainframe, text="Confirm Column Name",command=bar_entry_save)
+bar_entry_confirm.grid(column=4, row=2, sticky=N)
+
 
 #row or column toggle
 is_row = True
@@ -41,27 +54,29 @@ is_row = True
 def switch():
     global is_row
      
-    # Determine is on or off
+    # Determine col or row TRUE = row
     if is_row:
         bar_button.config(text = "Set to Column")
         is_row = False
-        bar_name.config(text = "Column Title")
+        bar_name.config(text = "Row Title:")
+        bar_entry_confirm.config(text = "Confirm Row Name")
+
 
     else:
        bar_button.config(text = "Set to Row") 
        is_row = True
-       bar_name.config(text = "Row Title")
+       bar_name.config(text = "Column Title:")
+       bar_entry_confirm.config(text = "Confirm Column Name")
 
  
 # Create A Button
 bar_button = ttk.Button(mainframe, text="Set to Row",command = switch)
-bar_button.grid(column=3, row=3, sticky=(W, E))
-
-
-
-
-bar_name = ttk.Label(mainframe, text="Bar Name")
+bar_button.grid(column=3, row=1, sticky=(W, E))
+# Button Description
+bar_name = ttk.Label(mainframe, text="Column Title:")
 bar_name.grid(column=2, row=2, sticky=(W, E))
+
+
 
 for child in mainframe.winfo_children(): 
     child.grid_configure(padx=5, pady=5)

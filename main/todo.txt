@@ -1,4 +1,6 @@
-1- get file_name from fileDialog to save to mainGUI as a variable for later use DONE
-2- create an option to select a row or column of the selected file 
-    a- create a toggle for ROW or COL name of row or col has been solved
-3 - display basic statistical information about that row or column
+1- DONE get file_name from fileDialog to save to mainGUI as a variable for later use DONE
+2-  create an option to select a row or column of the selected file 
+    a- DONE create a toggle for ROW or COL 
+    b- DONE select name of row or col
+3 - pull an individual row / col with these settings
+4 - display basic statistical information about that row or column
