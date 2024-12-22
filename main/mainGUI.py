@@ -3,6 +3,7 @@ from tkinter import ttk
 import sv_ttk
 from fileDialog import file_opener
 import csv
+import pandas as pd
 
 
 file_name = ""
@@ -22,8 +23,11 @@ def confirmSelect():
             for row in reader:
                 assesedValues.append(float(row[bar]))
         else:
-            for col in reader:
-                assesedValues.append(float(col[bar]))
+            print("string var", bar)
+            int(bar)
+            print("int", bar)
+            df = pd.DataFrame({file_name})
+            assesedValues = df.iloc[bar].tolist()
         print(assesedValues)
 #selecting row/column by name
 bar = StringVar()
@@ -62,8 +66,8 @@ def switch():
     if is_row:
         bar_button.config(text = "Set to Column")
         is_row = False
-        bar_name.config(text = "Row Title:")
-        bar_entry_confirm.config(text = "Confirm Row Name")
+        bar_name.config(text = "Row Number:")
+        bar_entry_confirm.config(text = "Confirm Row Number")
 
 
     else:

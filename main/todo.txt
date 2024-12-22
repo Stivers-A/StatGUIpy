@@ -4,5 +4,6 @@
     b- DONE select name of row or col
     c- DONE connect selected name to 
 3 - pull an individual row / col with these settings
- 3a - make row/col toggle actually functional
+ 3a - HALF DONE make row/col toggle actually functional 
+  3a1- make col toggle work 
 4 - display basic statistical information about that row or column
