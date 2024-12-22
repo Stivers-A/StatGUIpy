@@ -2,5 +2,7 @@
 2-  create an option to select a row or column of the selected file 
     a- DONE create a toggle for ROW or COL 
     b- DONE select name of row or col
+    c- DONE connect selected name to 
 3 - pull an individual row / col with these settings
+ 3a - make row/col toggle actually functional
 4 - display basic statistical information about that row or column

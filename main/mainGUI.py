@@ -18,8 +18,12 @@ def confirmSelect():
 #a matrix that can be filled
     with open (file_name,'r',newline='') as csvfile:
         reader = csv.DictReader(csvfile)
-        for row in reader:
-            assesedValues.append(float(row['Assessed Value']))
+        if is_row:
+            for row in reader:
+                assesedValues.append(float(row[bar]))
+        else:
+            for col in reader:
+                assesedValues.append(float(col[bar]))
         print(assesedValues)
 #selecting row/column by name
 bar = StringVar()
