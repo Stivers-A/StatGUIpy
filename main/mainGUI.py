@@ -24,11 +24,11 @@ def confirmSelect():
                 assesedValues.append(float(row[bar]))
         else:
             print("string var", bar)
-            int(bar)
-            print("int", bar)
-            df = pd.DataFrame({file_name})
-            assesedValues = df.iloc[bar].tolist()
-        print(assesedValues)
+            barInt = int(bar)
+            print("int",bar)
+            df = pd.read_csv(file_name)
+            assesedValues = df.T
+        print(assesedValues[barInt])
 #selecting row/column by name
 bar = StringVar()
 def bar_entry_save():
