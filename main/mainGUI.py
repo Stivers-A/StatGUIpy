@@ -5,8 +5,17 @@ from fileDialog import file_opener
 import csv
 import pandas as pd
 
-
 file_name = ""
+assesedValues = []
+def output_print():
+    global assesedValues
+    #input assesedValues
+    #output mean, median , mode & range
+    #first up mean
+    length = len(assesedValues)
+    total = sum(assesedValues)
+    mean = total / length
+    print("mean", mean)
 def fileSelect():
     global file_name 
     file_name = file_opener()
@@ -14,8 +23,8 @@ def fileSelect():
     #uses file_opener in fileDialog to save the path to a file as file_name
 def confirmSelect():
     global file_name
+    global assesedValues
     print(file_name, "print from confirmSelect")
-    assesedValues = []
 #a matrix that can be filled
     with open (file_name,'r',newline='') as csvfile:
         reader = csv.DictReader(csvfile)
@@ -29,12 +38,14 @@ def confirmSelect():
             df = pd.DataFrame({file_name})
             assesedValues = df.iloc[bar].tolist()
         print(assesedValues)
+        output_print()
 #selecting row/column by name
 bar = StringVar()
 def bar_entry_save():
     global bar
     bar = bar_entry.get()
     print("bar entry saved ", bar)
+    #selects col name or row number
 
 root = Tk()
 root.title("Stats GUI  Py")
@@ -45,7 +56,7 @@ root.columnconfigure(0, weight=1)
 root.rowconfigure(0, weight=1)
 
 ttk.Button(mainframe, text="Select File", command=fileSelect).grid(column=1, row=1, sticky=N)
-ttk.Button(mainframe, text="Finalize Selection",command=confirmSelect).grid(column=9, row=1, sticky=N)
+ttk.Button(mainframe, text="Confirm Selection",command=confirmSelect).grid(column=9, row=1, sticky=N)
 
 
 bar_entry = ttk.Entry(mainframe, width=25, textvariable=bar)
