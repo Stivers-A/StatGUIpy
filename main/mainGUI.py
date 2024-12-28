@@ -4,7 +4,7 @@ import sv_ttk
 from fileDialog import file_opener
 import csv
 import pandas as pd
-
+import statistics
 file_name = ""
 assesedValues = []
 def output_print():
@@ -12,10 +12,24 @@ def output_print():
     #input assesedValues
     #output mean, median , mode & range
     #first up mean
-    length = len(assesedValues)
-    total = sum(assesedValues)
-    mean = total / length
+
+    mean = statistics.mean(assesedValues)
     print("mean", mean)
+    #mean get
+    median = statistics.median(assesedValues)
+    print("median", median)
+    #median get
+    mode = statistics.mode(assesedValues)
+    print("mode",mode)
+    #mode get
+    min_val = min(assesedValues)
+    max_val = max(assesedValues)
+    #range is minimum and maximum
+    print("range",min_val," to ", max_val)
+    #range get
+    standard_dev = statistics.stdev(assesedValues)
+    print("Standard Deviation", standard_dev)
+
 def fileSelect():
     global file_name 
     file_name = file_opener()
