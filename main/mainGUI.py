@@ -15,6 +15,10 @@ def output_print():
 
     mean = statistics.mean(assesedValues)
     print("mean", mean)
+    mean_rounded = round(mean,2)
+    mean_output = str(mean_rounded)
+    mean_display.config(text = ("Mean:", mean_output))
+    #rounds mean then converts to string
     #mean get
     median = statistics.median(assesedValues)
     print("median", median)
