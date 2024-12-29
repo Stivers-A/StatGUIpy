@@ -109,7 +109,22 @@ bar_button.grid(column=3, row=1, sticky=(W, E))
 bar_name = ttk.Label(mainframe, text="Column Title:")
 bar_name.grid(column=2, row=2, sticky=(W, E))
 
-
+#Outputs
+mean_display = ttk.Label(mainframe, text="mean_display")
+mean_display.grid(column=1, row=5, sticky=(W, E))
+#mean
+median_display = ttk.Label(mainframe, text="median_display")
+median_display.grid(column=2, row=5, sticky=(W, E))
+#median
+mode_display = ttk.Label(mainframe, text="mode_display")
+mode_display.grid(column=3, row=5, sticky=(W, E))
+#mode
+range_display = ttk.Label(mainframe, text="range_display")
+range_display.grid(column=4, row=5, sticky=(W, E))
+#range
+stdev_display = ttk.Label(mainframe, text="stdev_display")
+stdev_display.grid(column=5, row=5, sticky=(W, E))
+#standard deviation
 
 for child in mainframe.winfo_children(): 
     child.grid_configure(padx=5, pady=5)
