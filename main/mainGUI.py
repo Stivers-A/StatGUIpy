@@ -20,19 +20,38 @@ def output_print():
     mean_display.config(text = ("Mean:", mean_output))
     #rounds mean then converts to string
     #mean get
+
     median = statistics.median(assesedValues)
     print("median", median)
+    median_rounded = round(median,2)
+    median_output = str(median_rounded)
+    median_display.config(text = ("Median:", median_output))
+    #rounds median then converts to string
     #median get
     mode = statistics.mode(assesedValues)
     print("mode",mode)
+    mode = statistics.median(assesedValues)
+    print("median", mode)
+    mode_rounded = round(mode,2)
+    mode_output = str(mode_rounded)
+    mode_display.config(text = ("Mode:", mode_output))
+    #rounds median then converts to string
     #mode get
     min_val = min(assesedValues)
     max_val = max(assesedValues)
     #range is minimum and maximum
-    print("range",min_val," to ", max_val)
+    print("range",min_val,"to", max_val)
+    min_val_rounded = round(min_val,2)
+    min_val_output = str(min_val_rounded)
+    max_val_rounded = round(max_val,2)
+    max_val_output = str(max_val_rounded)
+    range_display.config(text = ("Range: Min_Val:", min_val_output,"Max_Val:",max_val_output))
     #range get
     standard_dev = statistics.stdev(assesedValues)
     print("Standard Deviation", standard_dev)
+    standard_dev_rounded = round(standard_dev,2)
+    standard_dev_output = str(standard_dev_rounded)
+    stdev_display.config(text = ("Standard_Deviation:", standard_dev_output))
 
 def fileSelect():
     global file_name 
@@ -114,19 +133,19 @@ bar_name = ttk.Label(mainframe, text="Column Title:")
 bar_name.grid(column=2, row=2, sticky=(W, E))
 
 #Outputs
-mean_display = ttk.Label(mainframe, text="mean_display")
+mean_display = ttk.Label(mainframe, text="Mean:")
 mean_display.grid(column=1, row=5, sticky=(W, E))
 #mean
-median_display = ttk.Label(mainframe, text="median_display")
+median_display = ttk.Label(mainframe, text="Median:")
 median_display.grid(column=2, row=5, sticky=(W, E))
 #median
-mode_display = ttk.Label(mainframe, text="mode_display")
+mode_display = ttk.Label(mainframe, text="Mode:")
 mode_display.grid(column=3, row=5, sticky=(W, E))
 #mode
-range_display = ttk.Label(mainframe, text="range_display")
+range_display = ttk.Label(mainframe, text="Range:")
 range_display.grid(column=4, row=5, sticky=(W, E))
 #range
-stdev_display = ttk.Label(mainframe, text="stdev_display")
+stdev_display = ttk.Label(mainframe, text="Standard_Deviation:")
 stdev_display.grid(column=5, row=5, sticky=(W, E))
 #standard deviation
 
