@@ -3,8 +3,9 @@
     a- DONE create a toggle for ROW or COL 
     b- DONE select name of row or col
     c- DONE connect selected name to 
-3 - pull an individual row / col with these settings
+3 - DONE pull an individual row / col with these settings
  3a -  DONE make row/col toggle actually functional 
-  3a1- make col toggle work  DONE
-4 - make both the outputs either dataframes or lists for easier processing
-5 - display basic statistical information about that row or column
+  3a1- DONE make col toggle work 
+4 - DONE display basic statistical information about that row or column
+ 4a - DONE get basic stat info
+ 4b  DONE -display basic stat info
