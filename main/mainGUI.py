@@ -22,13 +22,17 @@ def confirmSelect():
         if is_row:
             for row in reader:
                 assesedValues.append(float(row[bar]))
+                #assessed values is a list that has 1 column in it.
         else:
             print("string var", bar)
             barInt = int(bar)
             print("int",bar)
             df = pd.read_csv(file_name)
-            assesedValues = df.T
-        print(assesedValues[barInt])
+            transposedValues = df.T
+            #assesed values is a Dataframe that is transposed so rows are now cols
+            assesedValues = transposedValues[barInt]
+            #assesed values is a dataframe with the titles and the selected rows information
+        print(assesedValues)
 #selecting row/column by name
 bar = StringVar()
 def bar_entry_save():

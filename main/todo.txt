@@ -6,4 +6,5 @@
 3 - pull an individual row / col with these settings
  3a -  DONE make row/col toggle actually functional 
   3a1- make col toggle work  DONE
-4 - display basic statistical information about that row or column
+4 - make both the outputs either dataframes or lists for easier processing
+5 - display basic statistical information about that row or column
